@@ -3,8 +3,8 @@
 from setuptools import setup
 
 setup(
-    name='PythonServiceTemplate',
-    description='This is a template for micro service using python.',
+    name='CalculationService',
+    description='Service for calculations.',
     version='1.0',
     author='Anton Iskov',
     author_email='aiskov@jiss-software.com',
@@ -13,7 +13,6 @@ setup(
         'handler'
     ],
     install_requires=[
-        'tornado==4.2.1',
-        'motor'
+        'tornado==4.2.1'
     ]
 )
