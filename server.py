@@ -1,7 +1,6 @@
 import tornado.ioloop
 import tornado.web
 import logging
-import motor
 from settings import routing
 from tornado.options import options
 import os
@@ -19,9 +18,7 @@ logging.basicConfig(
 
 ioLoop = tornado.ioloop.IOLoop.current()
 
-logging.getLogger('INIT').info('Connecting to mongodb at: %s' % options.db_address)
-mongodb = ioLoop.run_sync(motor.MotorClient(options.db_address).open)
-app = tornado.web.Application(routing, db=mongodb, autoreload=options.autoreload)
+app = tornado.web.Application(routing, autoreload=options.autoreload)
 
 app.listen(options.port)
 
